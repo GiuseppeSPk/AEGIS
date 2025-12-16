@@ -30,6 +30,8 @@ dependencies = [
     "aiofiles>=24.1.0",
     "sqlalchemy[asyncio]>=2.0.0",
     "aiosqlite>=0.20.0",
+    "passlib>=1.7.4",
+    "python-multipart>=0.0.9",
 ]
 
 [project.optional-dependencies]
