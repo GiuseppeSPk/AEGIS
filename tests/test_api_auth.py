@@ -19,7 +19,7 @@ async def test_register(async_client: AsyncClient):
     data = response.json()
     assert data["email"] == EMAIL
     assert "id" in data
-    assert data["tier"] == "free"
+    assert data["tier"] == "standard"
 
 
 @pytest.mark.asyncio

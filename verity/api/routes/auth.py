@@ -188,7 +188,7 @@ async def register(user_in: UserCreate, db: AsyncSession = Depends(get_db)):
     new_user = User(
         email=user_in.email,
         password_hash=get_password_hash(user_in.password),
-        tier="free",
+        tier="standard",
     )
     db.add(new_user)
     await db.commit()

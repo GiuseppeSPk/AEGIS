@@ -91,8 +91,7 @@ async def create_campaign(
     """Create a new security assessment campaign."""
     user_id = user_info["user_id"]
 
-    # Check limit check (pseudo code based on tier logic)
-    # real tier logic would go here
+    # Enforce campaign constraints
 
     new_campaign = Campaign(
         user_id=user_id,

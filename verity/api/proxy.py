@@ -44,7 +44,7 @@ async def chat_proxy(
     # 1. Extract the last user message
     user_prompt = next((m["content"] for m in reversed(request.messages) if m["role"] == "user"), "")
     
-    # 2. Run Tier 1: Fast Filter
+    # 2. Run Fast Filter
     is_safe = await fast_filter_prompt(user_prompt)
     if not is_safe:
         raise HTTPException(
