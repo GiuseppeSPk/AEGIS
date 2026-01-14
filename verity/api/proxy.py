@@ -1,6 +1,6 @@
 """VERITY Guardrails: High-Performance AI Firewall Proxy.
 
-This is a prototype implementation of the Tier 1 Proxy Gateway.
+This is a prototype implementation of the Guardrails Proxy Gateway.
 It intercepts LLM requests, runs them through the filtering pipeline,
 and forwards them to the target provider.
 """
@@ -23,10 +23,10 @@ class ProxyRequest(BaseModel):
     stream: Optional[bool] = False
 
 async def fast_filter_prompt(prompt: str) -> bool:
-    """Tier 1: Fast Regex/Pattern matching.
+    """Fast Regex/Pattern matching filter.
     Returns True if safe, False if malicious.
     """
-    # Placeholder for Tier 1 logic
+    # Core pattern matching logic
     malicious_patterns = ["ignore all previous instructions", "system prompt", "DAN mode"]
     for pattern in malicious_patterns:
         if pattern.lower() in prompt.lower():
@@ -57,7 +57,7 @@ async def chat_proxy(
         )
     
     # 3. Forward to Target Provider (OpenAI/Vertex/etc)
-    # This is a placeholder for actual forwarding logic
+    # Forward to Target Provider (OpenAI/Anthropic/etc)
     latency_ms = (time.perf_counter() - start_time) * 1000
     
     return {

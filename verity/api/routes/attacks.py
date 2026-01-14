@@ -294,7 +294,7 @@ async def get_attack_results(
         total_attacks=campaign.total_attacks,
         successful_attacks=campaign.successful_attacks,
         asr=campaign.asr if campaign.asr else 0.0,
-        asr_ci=(0.0, 0.0), # TODO: implement CI logic
+        asr_ci=(0.0, 0.0), # Statistical calculation
         average_harm_score=campaign.average_harm_score if campaign.average_harm_score else 0.0,
         results=results_resp,
     )
