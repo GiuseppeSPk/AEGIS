@@ -84,6 +84,8 @@ secrets.json
 # Logs
 *.log
 logs/
+pytest_output.txt
+reports_real/
 
 # Jupyter
 .ipynb_checkpoints/
